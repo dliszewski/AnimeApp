@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row">
+  <div class="col-md-8 col-sm-8 dark">
+    <ul class="breadcrumb">
+      <li><a href="#"><i class="fa fa-home fa-lg"></i></a></li>
+      <li class="active">{{serie.title}}</li>
+    </ul>
+    <h4>{{serie.title}} Series</h4>
+    <hr>
+    <div class="row">
+      <div class="col-md-4 col-sm-4 col-xs-4">
+        <img ng-src="{{serie.coverimg}}">
+      </div>
+      <div class="col-md-8 col-sm-8 col-xs-8 text-left">
+        <h4>Tags</h4>
+        <hr>
+        <ul class="breadcrumb">
+          <li ng-repeat="tag in serie.tagsById"><a href="#/tags">{{tag.name}}</a></li>
+        </ul>
+        <h4>Details</h4>
+        <hr>
+        <h5>Original Title: {{serie.orgtitle}}</h5>
+        <h5>Type: {{serie.typ}}</h5>
+        <h5>Status: {{serie.status}}</h5>
+        <br>
+        <h4>Summary</h4>
+        <hr>
+        <p>{{serie.summary}}</p>
+      </div>
+    </div>
+    <h4>Episodes list</h4>
+    <hr>
+    <table class="table table-striped">
+      <tbody>
+      <tr ng-repeat="episode in episodes">
+        <td><a ng-href="#/episode/{{episode.id}}">Episode {{episode.number}}</a></td>
+      </tr>
+      </tbody>
+    </table>
+    <br>
+    <h4>Similar anime</h4>
+    <hr>
+    <div class="row text-center">
+      <div class="col-md-3 col-sm-3 col-xs-6" ng-repeat-start="serie in series  | limitTo:8">
+        <img ng-src="{{serie.coverimg}}">
+        <h5>{{serie.title}}</h5>
+
+        <p><a class="btn btn-default" href="#/serie/{{serie.id}}" role="button">View details <i class="fa fa-angle-double-right"></i></a>
+        </p>
+      </div>
+      <div class="clearfix" ng-if="$index%4==3"></div>
+      <div ng-repeat-end=""></div>
+    </div>
+
+  </div>
+
+  <div class="col-md-4 col-sm-4">
+    <div class="col-sm-12 dark">
+      <h4>Latest Anime episodes</h4>
+      <hr>
+      <div ng-repeat="episode in episodes | limitTo:10">
+        <a href="#">{{episode.seriesBySeriesid.title}} - episode {{episode.number}}</a>
+        <hr class="hr2">
+      </div>
+      <br>
+      <h4>Popular Series</h4>
+      <hr>
+      <div ng-repeat="episode in episodes | limitTo:10">
+        <a href="#">{{episode.seriesBySeriesid.title}}</a>
+        <hr class="hr2">
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

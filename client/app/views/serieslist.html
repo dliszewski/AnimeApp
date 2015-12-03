@@ -1,0 +1,53 @@
+<div class="container">
+<div class="row">
+  <div class="col-md-8 col-sm-8 dark">
+    <ul class="breadcrumb">
+      <li><a href="#"><i class="fa fa-home fa-lg"></i></a></li>
+      <li class="active">Series list</li>
+    </ul>
+    <h4>Series list</h4>
+
+    <div class="row text-center">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-12 col-sm-12 col-xs-12 well">
+
+            <div class="form-group">
+              <div class="input-group">
+                <input type="text" class="form-control formfix" ng-model="search.title" value="Search...">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+              </div>
+            </div>
+        </div>
+
+        <hr>
+          <table class="table table-striped animated zoomIn">
+            <tbody>
+            <tr ng-repeat="serie in series | filter:search:startsWith" class="iteam">
+              <td><a ng-href="#/serie/{{serie.id}}">{{serie.title}}</a></td>
+            </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-md-4 col-sm-4">
+    <div class="col-sm-12 dark">
+      <h4>Latest Anime episodes</h4>
+      <hr>
+      <div ng-repeat="episode in episodes  | limitTo:10">
+        <a href="#">{{episode.seriesBySeriesid.title}} - episode {{episode.number}}</a>
+        <hr class="hr2">
+      </div>
+      <br>
+      <h4>Popular Series</h4>
+      <hr>
+      <div ng-repeat="episode in episodes  | limitTo:10" >
+        <a href="#">{{episode.seriesBySeriesid.title}}</a>
+        <hr class="hr2">
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,97 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+img{
+  width: 100%;
+}
+
+.thumb{
+  width: 100%;
+}
+
+.aha{
+  display: inline-block;
+}
+
+.breadcrumb{
+  margin-top: 10px;
+}
+
+.hr2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 0;
+  border-top: 1px solid #76661f;
+}
+.hrgrey {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #bababa;
+}
+
+.dark{
+  background-color: #161616;
+}
+
+.mirror-panel{
+  width: 100%;
+  background-color: #161616;
+  margin: 20px auto 0 auto;
+}
+.mirror{
+  margin: 10px 0;
+}
+.letter{
+  margin: 4px;
+  padding: 4px;
+  display: inline-block;
+  background-color: #161616;
+}
+.form-control{
+  background-color: #161616 !important;
+  color:#ffffff !important;
+}
+.form-group{
+  margin-bottom: 0  !important;
+}
+.footer{
+  margin-bottom: 30px;
+}
+.hrgrey {
+  margin: 20px -15px;
+}
+tr.ng-enter{
+  z-index: 5555;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+tr.ng-leave{
+  -webkit-animation: fadeOut 1s;
+  animation: fadeOut 1s;
+  z-index: 6666;
+}
+tr.ng-enter-stagger {
+  -webkit-animation-delay:200ms;
+  animation-delay:50ms;
+
+  /* override to make sure it's not inherited from other styles */
+  -webkit-animation-duration:0;
+  animation-duration:0;
+}
+tr.ng-leave-stagger {
+  -webkit-animation-delay:200ms;
+  animation-delay:50ms;
+
+  /* override to make sure it's not inherited from other styles */
+  -webkit-animation-duration:0;
+  animation-duration:0;
+}
+.cover.ng-leave{
+  -webkit-animation: fadeOutLeft 1s;
+  animation: fadeOutLeft 1s;
+}

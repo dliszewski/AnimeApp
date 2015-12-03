@@ -1,0 +1,30 @@
+<div class="container">
+<div class="row">
+  <div class="col-md-12 dark" ng-cloak>
+    <h4>Newest Episodes</h4>
+    <hr>
+    <div class="row text-center">
+      <div class="col-md-1-5 col-sm-4 col-xs-6" ng-repeat-start="episode in episodes  | limitTo:15">
+        <a ng-href="#/episode/{{episode.id}}"><img ng-src="{{episode.seriesBySeriesid.coverimg}}">
+        <h5>{{episode.seriesBySeriesid.title}} - Episode {{episode.number}}</h5></a>
+      </div>
+      <div class="visible-md clearfix" ng-if="$index%5==4"></div>
+      <div class="visible-lg clearfix" ng-if="$index%5==4"></div>
+      <div class="visible-xs clearfix" ng-if="$index%2==1"></div>
+      <div ng-repeat-end=""></div>
+    </div>
+    <h4>Popular ANIME</h4>
+    <hr>
+    <div class="row text-center">
+      <div class="col-md-1-5 col-sm-4 col-xs-6 " ng-repeat-start="episode in episodes  | limitTo:15">
+        <a ng-href="#/serie/{{episode.seriesBySeriesid.id}}"><img ng-src="{{episode.seriesBySeriesid.coverimg}}">
+          <h5>{{episode.seriesBySeriesid.title}}</h5></a>
+      </div>
+      <div class="visible-md clearfix" ng-if="$index%5==4"></div>
+      <div class="visible-lg clearfix" ng-if="$index%5==4"></div>
+      <div class="visible-xs clearfix" ng-if="$index%2==1"></div>
+      <div ng-repeat-end=""></div>
+    </div>
+  </div>
+</div>
+</div>
